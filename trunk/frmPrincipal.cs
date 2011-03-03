@@ -91,6 +91,11 @@ namespace Karaoke
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (musica.Finished)
+            {
+                btnStop_Click_1(null, null);
+            }
+
             if (musica.PlayPosition > frasesParaExibir.Last().TempoFim)
             {
                 frasesParaExibir = getFrasesParaExibicao(frases, musica.PlayPosition);
