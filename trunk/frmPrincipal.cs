@@ -54,44 +54,13 @@ namespace Karaoke
                 return new Frase("?", tempoAtual, tempoAtual);
             }            
             return possivelFrase;            
-        }
-
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.InitialDirectory = Application.StartupPath + "\\musicas\\";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                btnPlay.Enabled = false;
-                btnStop.Enabled = true;
-
-                ISoundEngine engine = new ISoundEngine();
-                StreamReader rd = new StreamReader(openFileDialog1.FileName, true);
-                List<String> arquivo = new List<string>();
-                while (!rd.EndOfStream)
-                {
-                    arquivo.Add(rd.ReadLine());
-                }               
-                String nomeMusica = arquivo[0];
-                String caminhoMusica = Path.Combine(Application.StartupPath + "\\media", arquivo[1]);
-                frases = new List<Frase>();
-                arquivo.RemoveRange(0, 2);
-                foreach (String frase in arquivo)
-                {
-                    String[] componentes = frase.Split('#');
-                    frases.Add(new Frase(componentes[0], uint.Parse(componentes[1]), uint.Parse(componentes[2])));
-                }
-                lblNomeMusica.Text = nomeMusica;
-                musica = engine.Play2D(caminhoMusica);
-                timer1.Start();
-                frasesParaExibir = getFrasesParaExibicao(frases, musica.PlayPosition);
-                renderizarFrases(frasesParaExibir);
-                musica.Volume = 1;
-            }
-        }
+        }        
 
         private void renderizarFrases(List<Frase> frases)
         {
-            pnlFrases.Controls.Clear();            
+            pnlFrases.Controls.Clear();
+            int numeroCaracteres = 0;
+            bool quebraLinha = false;
             Label lblFrase;
             Label ultimaLabel = null;
             foreach (Frase frase in frases)
@@ -101,10 +70,20 @@ namespace Karaoke
                 lblFrase.Font = new Font(FontFamily.GenericSansSerif, 12);
                 lblFrase.Text = frase.Texto;                
                 lblFrase.Name = frase.TempoInicio.ToString();
+                if (numeroCaracteres > 50)
+                {
+                    lblFrase.Top = 21;
+                    if (!quebraLinha)
+                    {
+                        ultimaLabel = null;
+                        quebraLinha = true;
+                    }
+                }
                 if (ultimaLabel != null)
                 {
-                    lblFrase.Left = ultimaLabel.Width + 1;
+                    lblFrase.Left = ultimaLabel.Width + 2;
                 }
+                numeroCaracteres += frase.Texto.Length;
                 pnlFrases.Controls.Add(lblFrase);
                 ultimaLabel = lblFrase;
             }            
@@ -159,7 +138,7 @@ namespace Karaoke
             {
                 frasesParaExibicao.Add(frase);
                 numeroCaracteres += frase.Texto.Length;
-                if (numeroCaracteres > 50)
+                if (numeroCaracteres > 100)
                     break;                
             }
             if (frasesParaExibicao.Count < 1)
@@ -167,9 +146,42 @@ namespace Karaoke
                 frasesParaExibicao.Add(new Frase("...", tempoAtual, musica.PlayLength - tempoAtual));
             }
             return frasesParaExibicao;
+        }        
+
+        private void btnPlay_Click_1(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = Application.StartupPath + "\\musicas\\";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                btnPlay.Enabled = false;
+                btnStop.Enabled = true;
+
+                ISoundEngine engine = new ISoundEngine();
+                StreamReader rd = new StreamReader(openFileDialog1.FileName, true);
+                List<String> arquivo = new List<string>();
+                while (!rd.EndOfStream)
+                {
+                    arquivo.Add(rd.ReadLine());
+                }
+                String nomeMusica = arquivo[0];
+                String caminhoMusica = Path.Combine(Application.StartupPath + "\\media", arquivo[1]);
+                frases = new List<Frase>();
+                arquivo.RemoveRange(0, 2);
+                foreach (String frase in arquivo)
+                {
+                    String[] componentes = frase.Split('#');
+                    frases.Add(new Frase(componentes[0], uint.Parse(componentes[1]), uint.Parse(componentes[2])));
+                }
+                lblNomeMusica.Text = nomeMusica;
+                musica = engine.Play2D(caminhoMusica);
+                timer1.Start();
+                frasesParaExibir = getFrasesParaExibicao(frases, musica.PlayPosition);
+                renderizarFrases(frasesParaExibir);
+                musica.Volume = 1;
+            }
         }
 
-        private void btnStop_Click(object sender, EventArgs e)
+        private void btnStop_Click_1(object sender, EventArgs e)
         {
             pnlFrases.Controls.Clear();
             timer1.Stop();
@@ -178,6 +190,6 @@ namespace Karaoke
 
             btnPlay.Enabled = true;
             btnStop.Enabled = false;
-        }       
+        }      
     }
 }

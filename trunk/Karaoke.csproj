@@ -116,6 +116,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Karaoke_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\Frase.datasource" />
@@ -163,6 +164,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="image\play.png" />
+    <None Include="image\stop.png" />
+    <Content Include="image\microfone.ico" />
+    <Content Include="image\nota.ico" />
+    <None Include="image\tools.png" />
     <Content Include="media\media.txt" />
     <Content Include="musicas\musicas.txt" />
   </ItemGroup>
