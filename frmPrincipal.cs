@@ -31,7 +31,7 @@ namespace Karaoke
                 if (frase.TempoInicio <= tempoAtual && frase.TempoFim >= tempoAtual)
                     return frase;
             }
-            return new Frase("...", tempoAtual, tempoAtual);
+            return new Frase("?", tempoAtual, tempoAtual);
         }
 
         private Frase getProximaFrase(uint tempoAtual)
@@ -148,7 +148,7 @@ namespace Karaoke
             }
             if (frasesParaExibicao.Count < 1)
             {
-                frasesParaExibicao.Add(new Frase("...", tempoAtual, musica.PlayLength - tempoAtual));
+                frasesParaExibicao.Add(new Frase("...", tempoAtual, musica.PlayLength));
             }
             return frasesParaExibicao;
         }        
