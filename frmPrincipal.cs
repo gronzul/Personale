@@ -81,7 +81,7 @@ namespace Karaoke
                 }
                 if (ultimaLabel != null)
                 {
-                    lblFrase.Left = ultimaLabel.Width + 2;
+                    lblFrase.Left = ultimaLabel.Width + ultimaLabel.Left + 1;
                 }
                 numeroCaracteres += frase.Texto.Length;
                 pnlFrases.Controls.Add(lblFrase);
