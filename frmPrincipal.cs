@@ -195,6 +195,11 @@ namespace Karaoke
 
             btnPlay.Enabled = true;
             btnStop.Enabled = false;
+        }
+
+        private void cadastrarMúsicaV2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new CadastrarMusicaV2().ShowDialog(this);
         }      
     }
 }

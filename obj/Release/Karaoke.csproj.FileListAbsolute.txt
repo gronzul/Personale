@@ -31,3 +31,5 @@ E:\C#\Projetos\Karaoke\obj\Release\Karaoke.frmPrincipal.resources
 H:\C#\Projetos\Karaoke\obj\Release\Karaoke.CadastrarMusica.resources
 H:\C#\Projetos\Karaoke\obj\Release\Karaoke.CadastrarPalavra.resources
 H:\C#\Projetos\Karaoke\obj\Release\Karaoke.frmPrincipal.resources
+E:\C#\Projetos\Karaoke\obj\Release\Karaoke.CadastrarMusicaV2.resources
+E:\C#\Projetos\Karaoke\obj\Release\Karaoke.CadastrarTimming.resources
