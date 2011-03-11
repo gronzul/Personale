@@ -36,6 +36,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarMusicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarMúsicaV2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // menuStrip1
@@ -77,7 +79,8 @@
             // ferramentasToolStripMenuItem
             // 
             this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarMusicaToolStripMenuItem});
+            this.cadastrarMusicaToolStripMenuItem,
+            this.cadastrarMúsicaV2ToolStripMenuItem});
             this.ferramentasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ferramentasToolStripMenuItem.Image")));
             this.ferramentasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ferramentasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
@@ -88,9 +91,16 @@
             // cadastrarMusicaToolStripMenuItem
             // 
             this.cadastrarMusicaToolStripMenuItem.Name = "cadastrarMusicaToolStripMenuItem";
-            this.cadastrarMusicaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.cadastrarMusicaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.cadastrarMusicaToolStripMenuItem.Text = "Cadastrar Música";
             this.cadastrarMusicaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarMusicaToolStripMenuItem_Click);
+            // 
+            // cadastrarMúsicaV2ToolStripMenuItem
+            // 
+            this.cadastrarMúsicaV2ToolStripMenuItem.Name = "cadastrarMúsicaV2ToolStripMenuItem";
+            this.cadastrarMúsicaV2ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.cadastrarMúsicaV2ToolStripMenuItem.Text = "Cadastrar Música V2";
+            this.cadastrarMúsicaV2ToolStripMenuItem.Click += new System.EventHandler(this.cadastrarMúsicaV2ToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -153,6 +163,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarMúsicaV2ToolStripMenuItem;
     }
 }
 
