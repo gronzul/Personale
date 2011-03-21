@@ -40,6 +40,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
+            this.editarMúsicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 50;
+            this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // menuStrip1
@@ -80,7 +81,8 @@
             // 
             this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarMusicaToolStripMenuItem,
-            this.cadastrarMúsicaV2ToolStripMenuItem});
+            this.cadastrarMúsicaV2ToolStripMenuItem,
+            this.editarMúsicaToolStripMenuItem});
             this.ferramentasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ferramentasToolStripMenuItem.Image")));
             this.ferramentasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ferramentasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
@@ -129,6 +131,13 @@
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click_1);
             // 
+            // editarMúsicaToolStripMenuItem
+            // 
+            this.editarMúsicaToolStripMenuItem.Name = "editarMúsicaToolStripMenuItem";
+            this.editarMúsicaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.editarMúsicaToolStripMenuItem.Text = "Editar Música";
+            this.editarMúsicaToolStripMenuItem.Click += new System.EventHandler(this.editarMúsicaToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,6 +173,7 @@
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.ToolStripMenuItem cadastrarMúsicaV2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarMúsicaToolStripMenuItem;
     }
 }
 

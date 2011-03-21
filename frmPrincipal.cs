@@ -81,7 +81,7 @@ namespace Karaoke
                 }
                 if (ultimaLabel != null)
                 {
-                    lblFrase.Left = ultimaLabel.Width + ultimaLabel.Left + 1;
+                    lblFrase.Left = ultimaLabel.Width + ultimaLabel.Left + 2;
                 }
                 numeroCaracteres += frase.Texto.Length;
                 pnlFrases.Controls.Add(lblFrase);
@@ -102,7 +102,7 @@ namespace Karaoke
                 renderizarFrases(frasesParaExibir);
             }
             Frase fraseAtual = getFraseAtual(musica.PlayPosition);
-            if (musica.PlayPosition > lastTempoFim && !fraseAtual.Texto.Equals("?"))
+            if (musica.PlayPosition > lastTempoFim)
             {
                 lastTempoFim = fraseAtual.TempoFim;
                 bool verificado = false;
@@ -115,7 +115,7 @@ namespace Karaoke
                             break;
                         verificado = true;
                     }
-                    if (lbl.Name.Equals(fraseAtual.TempoInicio.ToString()))
+                    if (!fraseAtual.Texto.Equals("?") && lbl.Name.Equals(fraseAtual.TempoInicio.ToString()))
                     {
                         lbl.Font = new Font(pnlFrases.Controls[0].Font, FontStyle.Bold);
                         if (verificado)
@@ -133,7 +133,7 @@ namespace Karaoke
 
         private List<Frase> getFrasesParaExibicao(List<Frase> frases, uint tempoAtual)
         {
-            int numeroCaracteres = 0;
+            int numeroCaracteres = 0;            
             List<Frase> frasesParaExibicao = new List<Frase>();
             List<Frase> frasesPossiveis = (from fr in frases
                                            where fr.TempoInicio > tempoAtual || (fr.TempoInicio < tempoAtual && tempoAtual < fr.TempoFim) 
@@ -177,6 +177,7 @@ namespace Karaoke
                     String[] componentes = frase.Split('#');
                     frases.Add(new Frase(componentes[0], uint.Parse(componentes[1]), uint.Parse(componentes[2])));
                 }
+                rd.Close();
                 lblNomeMusica.Text = nomeMusica;
                 musica = engine.Play2D(caminhoMusica);
                 timer1.Start();
@@ -200,6 +201,11 @@ namespace Karaoke
         private void cadastrarMúsicaV2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new CadastrarMusicaV2().ShowDialog(this);
+        }
+
+        private void editarMúsicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EditarMusica().Show(this);
         }      
     }
 }
