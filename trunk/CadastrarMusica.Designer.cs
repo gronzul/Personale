@@ -33,8 +33,6 @@
             this.txtCaminho = new System.Windows.Forms.TextBox();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.lstFrases = new System.Windows.Forms.ListView();
@@ -73,25 +71,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "MP3|*.mp3|Wave|*.wav|Windows Media Audio|*.wma|OGG|*.ogg";
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(284, 285);
-            this.shapeContainer1.TabIndex = 3;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 4;
-            this.lineShape1.X2 = 279;
-            this.lineShape1.Y1 = 64;
-            this.lineShape1.Y2 = 64;
             // 
             // btnAdicionar
             // 
@@ -172,8 +151,7 @@
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtCaminho);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.shapeContainer1);
+            this.Controls.Add(this.label1);            
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -190,9 +168,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCaminho;
         private System.Windows.Forms.Button btnProcurar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;        
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.ListView lstFrases;

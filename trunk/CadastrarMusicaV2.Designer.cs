@@ -33,8 +33,6 @@
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtCaminho = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.txtFrase = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddFrase = new System.Windows.Forms.Button();
@@ -86,25 +84,6 @@
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Arquivo:";
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 6;
-            this.lineShape1.X2 = 281;
-            this.lineShape1.Y1 = 68;
-            this.lineShape1.Y2 = 68;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(288, 497);
-            this.shapeContainer1.TabIndex = 18;
-            this.shapeContainer1.TabStop = false;
             // 
             // txtFrase
             // 
@@ -193,8 +172,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtCaminho);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.shapeContainer1);
+            this.Controls.Add(this.label1);            
             this.Name = "CadastrarMusicaV2";
             this.Text = "CadastrarMusicaV2";
             this.ResumeLayout(false);
@@ -209,8 +187,6 @@
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.TextBox txtCaminho;
         private System.Windows.Forms.Label label1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.TextBox txtFrase;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddFrase;

@@ -17,6 +17,9 @@
     <ManifestKeyFile>Karaoke_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <StartupObject>Karaoke.Program</StartupObject>
     <PublishUrl>C:\Users\Lucas\Desktop\Karaoke\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -33,6 +36,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,7 +63,10 @@
       <HintPath>.\irrKlang.NET2.0.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="NAudio, Version=1.3.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -102,6 +109,18 @@
     <Compile Include="CadastrarTimming.Designer.cs">
       <DependentUpon>CadastrarTimming.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarCadastrarPalavra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCadastrarPalavra.Designer.cs">
+      <DependentUpon>EditarCadastrarPalavra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarMusica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarMusica.Designer.cs">
+      <DependentUpon>EditarMusica.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarTimming.resx">
       <DependentUpon>CadastrarTimming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCadastrarPalavra.resx">
+      <DependentUpon>EditarCadastrarPalavra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarMusica.resx">
+      <DependentUpon>EditarMusica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -182,12 +207,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.manifest" />
     <None Include="image\play.png" />
     <None Include="image\stop.png" />
     <Content Include="image\microfone.ico" />
     <Content Include="image\nota.ico" />
     <None Include="image\tools.png" />
+    <None Include="musicas\Clocks V2.kar" />
+    <None Include="image\pause.png" />
+    <Content Include="media\Coldplay_-_Clocks_%28Instrumental_&amp;_Lyrics%29.mp3" />
     <Content Include="media\media.txt" />
+    <Content Include="microfone.ico" />
     <Content Include="musicas\musicas.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -198,4 +228,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>
