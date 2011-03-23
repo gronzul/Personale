@@ -37,10 +37,10 @@
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarMusicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarMúsicaV2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarMúsicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
-            this.editarMúsicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,8 +69,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ferramentasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(727, 24);
@@ -104,6 +102,13 @@
             this.cadastrarMúsicaV2ToolStripMenuItem.Text = "Cadastrar Música V2";
             this.cadastrarMúsicaV2ToolStripMenuItem.Click += new System.EventHandler(this.cadastrarMúsicaV2ToolStripMenuItem_Click);
             // 
+            // editarMúsicaToolStripMenuItem
+            // 
+            this.editarMúsicaToolStripMenuItem.Name = "editarMúsicaToolStripMenuItem";
+            this.editarMúsicaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.editarMúsicaToolStripMenuItem.Text = "Editar Música";
+            this.editarMúsicaToolStripMenuItem.Click += new System.EventHandler(this.editarMúsicaToolStripMenuItem_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "Karaoke Files|*.kar";
@@ -130,13 +135,6 @@
             this.btnPlay.TabIndex = 11;
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click_1);
-            // 
-            // editarMúsicaToolStripMenuItem
-            // 
-            this.editarMúsicaToolStripMenuItem.Name = "editarMúsicaToolStripMenuItem";
-            this.editarMúsicaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.editarMúsicaToolStripMenuItem.Text = "Editar Música";
-            this.editarMúsicaToolStripMenuItem.Click += new System.EventHandler(this.editarMúsicaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
