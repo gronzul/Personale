@@ -17,9 +17,9 @@
     <ManifestKeyFile>Karaoke_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Karaoke.ico</ApplicationIcon>
     <StartupObject>Karaoke.Program</StartupObject>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
     <PublishUrl>C:\Users\Lucas\Desktop\Karaoke\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -36,7 +36,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -162,8 +161,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Karaoke_TemporaryKey.pfx" />
-    <None Include="Properties\DataSources\Frase.datasource" />
-    <None Include="Properties\DataSources\Frase1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,14 +207,13 @@
     <None Include="app.manifest" />
     <None Include="image\play.png" />
     <None Include="image\stop.png" />
-    <Content Include="image\microfone.ico" />
     <Content Include="image\nota.ico" />
     <None Include="image\tools.png" />
     <None Include="musicas\Clocks V2.kar" />
     <None Include="image\pause.png" />
+    <Content Include="Karaoke.ico" />
     <Content Include="media\Coldplay_-_Clocks_%28Instrumental_&amp;_Lyrics%29.mp3" />
     <Content Include="media\media.txt" />
-    <Content Include="microfone.ico" />
     <Content Include="musicas\musicas.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
