@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarMusica));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pnlEditarMusica = new System.Windows.Forms.Panel();
+            this.lblTempoM = new System.Windows.Forms.Label();
+            this.lblTempoHMS = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
@@ -48,10 +53,6 @@
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblTempoHMS = new System.Windows.Forms.Label();
-            this.lblTempoM = new System.Windows.Forms.Label();
             this.pnlEditarMusica.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +85,40 @@
             this.pnlEditarMusica.Name = "pnlEditarMusica";
             this.pnlEditarMusica.Size = new System.Drawing.Size(304, 416);
             this.pnlEditarMusica.TabIndex = 0;
+            // 
+            // lblTempoM
+            // 
+            this.lblTempoM.AutoSize = true;
+            this.lblTempoM.Location = new System.Drawing.Point(151, 107);
+            this.lblTempoM.Name = "lblTempoM";
+            this.lblTempoM.Size = new System.Drawing.Size(0, 13);
+            this.lblTempoM.TabIndex = 19;
+            // 
+            // lblTempoHMS
+            // 
+            this.lblTempoHMS.AutoSize = true;
+            this.lblTempoHMS.Location = new System.Drawing.Point(138, 90);
+            this.lblTempoHMS.Name = "lblTempoHMS";
+            this.lblTempoHMS.Size = new System.Drawing.Size(0, 13);
+            this.lblTempoHMS.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Tempo (Milissegundos) -";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Tempo (HH:MM:SS) -";
             // 
             // btnPause
             // 
@@ -231,40 +266,6 @@
             // 
             this.openFileDialog3.Filter = "MP3|*.mp3|Wave|*.wav|Windows Media Audio|*.wma|OGG|*.ogg";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Tempo (HH:MM:SS) -";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Tempo (Milissegundos) -";
-            // 
-            // lblTempoHMS
-            // 
-            this.lblTempoHMS.AutoSize = true;
-            this.lblTempoHMS.Location = new System.Drawing.Point(138, 90);
-            this.lblTempoHMS.Name = "lblTempoHMS";
-            this.lblTempoHMS.Size = new System.Drawing.Size(0, 13);
-            this.lblTempoHMS.TabIndex = 18;
-            // 
-            // lblTempoM
-            // 
-            this.lblTempoM.AutoSize = true;
-            this.lblTempoM.Location = new System.Drawing.Point(151, 107);
-            this.lblTempoM.Name = "lblTempoM";
-            this.lblTempoM.Size = new System.Drawing.Size(0, 13);
-            this.lblTempoM.TabIndex = 19;
-            // 
             // EditarMusica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,8 +273,11 @@
             this.ClientSize = new System.Drawing.Size(328, 470);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.pnlEditarMusica);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "EditarMusica";
-            this.Text = "EditarMusica";
+            this.Text = "Editar Música";
             this.pnlEditarMusica.ResumeLayout(false);
             this.pnlEditarMusica.PerformLayout();
             this.ResumeLayout(false);

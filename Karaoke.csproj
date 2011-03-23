@@ -207,6 +207,7 @@
     <None Include="app.manifest" />
     <None Include="image\play.png" />
     <None Include="image\stop.png" />
+    <None Include="image\microfone.ico" />
     <Content Include="image\nota.ico" />
     <None Include="image\tools.png" />
     <None Include="musicas\Clocks V2.kar" />

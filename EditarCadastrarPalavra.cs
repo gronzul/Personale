@@ -22,6 +22,7 @@ namespace Karaoke
                 txtFrase.Text = frmPai.Frase.Texto;
                 txtTempoInicio.Text = frmPai.Frase.TempoInicio.ToString();
                 txtTempoFim.Text = frmPai.Frase.TempoFim.ToString();
+                frmPai.Frases.Remove(frmPai.Frase);
             }
         }
 

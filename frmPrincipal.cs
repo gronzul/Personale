@@ -158,6 +158,7 @@ namespace Karaoke
             openFileDialog1.InitialDirectory = Application.StartupPath + "\\musicas\\";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                btnPause.Enabled = true;
                 btnPlay.Enabled = false;
                 btnStop.Enabled = true;
 
@@ -194,6 +195,7 @@ namespace Karaoke
             musica.Stop();
             lblNomeMusica.Text = "Nenhuma música selecionada";
 
+            btnPause.Enabled = false;
             btnPlay.Enabled = true;
             btnStop.Enabled = false;
         }
@@ -206,6 +208,22 @@ namespace Karaoke
         private void editarMúsicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new EditarMusica().Show(this);
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            if (musica.Paused)
+            {
+                musica.Paused = false;
+                timer1.Start();
+                btnStop.Enabled = true;
+            }
+            else
+            {
+                timer1.Stop();
+                musica.Paused = true;
+                btnStop.Enabled = false;
+            }
         }      
     }
 }

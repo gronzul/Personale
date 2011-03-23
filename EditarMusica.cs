@@ -103,13 +103,10 @@ namespace Karaoke
                     }
                 }
 
-                if (FileSystem.FileExists(caminhoDestino))
+                if (!FileSystem.FileExists(caminhoDestino))
                 {
-                    MessageBox.Show("Arquivo de música já existente. Altere o nome do arquivo a ser importado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                FileSystem.CopyFile(caminhoOrigem, caminhoDestino, UIOption.AllDialogs);
+                    FileSystem.CopyFile(caminhoOrigem, caminhoDestino, UIOption.AllDialogs);
+                }                
                 StreamWriter wr = new StreamWriter(Application.StartupPath + "\\musicas\\" + txtNome.Text + ".kar", false);
                 wr.WriteLine(txtNome.Text);
                 wr.WriteLine(nomeArquivo);
@@ -140,7 +137,11 @@ namespace Karaoke
             foreach (Frase frase in frases)
             {
                 lstFrases.Items.Add(frase);
-            }
+                if (this.frase != null && this.frase == frase)
+                {
+                    lstFrases.SelectedItem = frase;
+                }
+            }            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -187,7 +188,7 @@ namespace Karaoke
         private void btnPause_Click(object sender, EventArgs e)
         {
             musica.Paused = !musica.Paused;
-            btnStop.Enabled = musica.Paused;            
+            btnStop.Enabled = !musica.Paused;            
         }
 
         private void timer1_Tick(object sender, EventArgs e)

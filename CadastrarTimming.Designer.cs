@@ -86,8 +86,10 @@
             this.Controls.Add(this.btnSpace);
             this.Controls.Add(this.btnFrase);
             this.Controls.Add(this.btnPlay);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "CadastrarTimming";
-            this.Text = "CadastrarTimming";
+            this.Text = "Cadastrar Timing";
             this.ResumeLayout(false);
 
         }
